@@ -158,6 +158,9 @@
       </div>
       <div class="companies-main-wrapper"></div>
     </div>
+    <br>
+    <br>
+    <br>
    <div data-w-id="045766c4-1db3-3876-c77e-2634fdea7bdc" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="section companies"></div> 
      <div data-w-id="0b097d78-b776-9e09-a4b6-8ab657637188" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="section about">
       <div class="container-default-1209px w-container">
@@ -179,43 +182,36 @@
         <p class="paragraph mg-bottom-0px">We offer free and low-cost courses in math, English, history, fine arts, and more.<br><a href="#"></a></p>
         <p class="paragraph-2">Have a suggestion?<a href="#" class="link-3">Request a new course here.</a></p>
         <div class="w-dyn-list">
-          <div role="list" class="courses-section-grid w-dyn-items">
-            <!-- <div data-w-id="0b097d78-b776-9e09-a4b6-8ab6576371be" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" role="listitem" class="course-card-wrapper w-dyn-item">
-              <div class="card"><img src="" alt="" class="image course"><a href="#" class="card-image-link w-inline-block"></a>
-                <div class="card-content">
-                  <a href="#" class="card-title-link w-inline-block">
-                    <h3 class="title course"></h3>
-                  </a>
-                  <p></p>
-                  <div class="divider course-card"></div>
-                  <div class="course-card-details-wrapper">
-                    <div class="level-wrapper"><img src="/static/images/icon-level-01-academy-template.svg" alt="" class="level-icon"><img src="/static/images/icon-level-02-academy-template.svg" alt="" class="level-icon"><img src="/static/images/icon-level-03-academy-template.svg" alt="" class="level-icon">
-                      <div class="w-dyn-list">
-                        <div role="list" class="levels-list w-dyn-items">
-                          <div role="listitem" class="level-text-wrapper w-dyn-item"><a href="#" class="level-text"></a></div>
+          <div role="list" class="courses-grid w-dyn-items">
+              <table>
+                  {% for r in results %}
+                  <td style="padding:0; margin:0">
+                    <div class="card" style="width: 300px"><a href="/courses/{{ r['slug'] }}" class="card-image-link w-inline-block"></a><img src="{{ r['img'] }}" alt="" class="image course">
+                      <div class="card-content">
+                        <a href="/courses/{{ r['slug'] }}" class="card-title-link w-inline-block">
+                          <h3 class="title course">{{ r["name"] }}</h3>
+                        </a>
+                        <p>{{ r["short_description"] }}</p>
+                        <div class="divider course-card"></div>
+                        <div class="course-card-details-wrapper">
+                          <div class="level-wrapper"><img src="/static/images/icon-level-01-academy-template.svg" alt="" class="level-icon"><img src="/static/images/icon-level-02-academy-template.svg" alt="" class="level-icon"><img src="/static/images/icon-level-03-academy-template.svg" alt="" class="level-icon">
+                            <div class="w-dyn-list">
+                              <div role="list" class="levels-list w-dyn-items">
+                                <div role="listitem" class="level-text-wrapper w-dyn-item"><a href="#" class="level-text"></a></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="course-card-price"></div>
                         </div>
                       </div>
-                    </div>
-                    <div class="course-card-price"></div>
-                  </div>
-                </div>
-                
-              </div>
-            </div> -->
-            <div data-w-id="0b097d78-b776-9e09-a4b6-8ab6576371be " class="tt"  style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" role="listitem" class="course-card-wrapper w-dyn-item">
-           <a href="detail_product.html" >  <img src="/static/images/1.jpg" alt=""></a>
-            </div> 
-            <div data-w-id="0b097d78-b776-9e09-a4b6-8ab6576371be " class="tt" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" role="listitem" class="course-card-wrapper w-dyn-item">
-             <a href="detail_product.html" > <img src="/static/images/2.jpg" alt=""></a>
-             </div>  
-             <div data-w-id="0b097d78-b776-9e09-a4b6-8ab6576371be" class="tt" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" role="listitem" class="course-card-wrapper w-dyn-item">
-             <a href="detail_product.html" > <img src="/static/images/3.jpg" alt=""></a>
-             </div> 
+                  </td>
+                  {% endfor %}
+              </table>
+            </div>
           </div>
-          
-          <!-- <div class="card empty-state w-dyn-empty">
+          <div class="card empty-state w-dyn-empty">
             <div class="empty-state-text">There are no courses available yet.</div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

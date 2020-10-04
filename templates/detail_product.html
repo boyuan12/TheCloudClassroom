@@ -67,8 +67,8 @@
         <div class="course-wrapper">
           <div class="about-course">
             <div data-w-id="5c5cb2e0-9139-5c2c-442b-67253e009bb2" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="top-content course">
-              <h1 class="title course-page"></h1>
-              <p class="paragraph course-description"></p>
+              <h1 class="title course-page">{{ data["name"] }}</h1>
+              <p class="paragraph course-description">{{ data["long_description"]}}</p>
               <div class="w-layout-grid advantage-course-grid">
                 <div class="advantage-course-wrapper"><img src="/static/images/icon-advantage-course-01-academy-template.svg" alt="" class="advantage-course-icon">
                   <div class="advantage-course-text">Live Instruction</div>
@@ -82,7 +82,7 @@
                 <div class="advantage-course-wrapper"><img src="/static/images/icon-advantage-course-04-academy-template.svg" alt="" class="advantage-course-icon">
                   <div class="advantage-course-text">One-on-One Mentorship</div>
                 </div>
-              </div><a data-w-id="5c5cb2e0-9139-5c2c-442b-67253e009bc8" href="#" class="course-teacher-wrapper w-inline-block"><img src="" alt="" class="image course-teacher"><div><div class="course-teacher-name"></div><div class="teacher-work _2"></div></div></a></div>
+              </div><a data-w-id="5c5cb2e0-9139-5c2c-442b-67253e009bc8" href="#" class="course-teacher-wrapper w-inline-block"><img src="{{ ins['picture'] }}" alt="" class="image course-teacher"><div><div class="course-teacher-name"></div><div class="teacher-work _2"></div></div></a></div>
             <div class="spacer about-course"></div>
             <div class="card course-mobile">
               <div class="course-preview"><img src="" alt="" class="image course-page">
@@ -105,13 +105,18 @@
                   </div>
                 </div>
                 <div>
-                  <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." value="Add to Cart" class="w-commerce-commerceaddtocartbutton button-primary-2 large full-width"><a href="checkout.html" data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" style="display:none" class="w-commerce-commercebuynowbutton">Buy now</a></form>
-                  <div style="display:none" class="w-commerce-commerceaddtocartoutofstock">
-                    <div>This product is out of stock.</div>
-                  </div>
-                  <div data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror">
-                    <div data-node-type="commerce-add-to-cart-error" data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart." data-w-add-to-cart-buy-now-error="Something went wrong when trying to purchase this item." data-w-add-to-cart-checkout-disabled-error="Checkout is disabled on this site.">Product is not available in this quantity.</div>
-                  </div>
+                  {% if data['price'] != "$0.00" %}
+                    <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." value="Add to Cart" class="w-commerce-commerceaddtocartbutton button-primary-2 large full-width"><a href="checkout.html" data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" style="display:none" class="w-commerce-commercebuynowbutton">Buy now</a></form>
+                    <div style="display:none" class="w-commerce-commerceaddtocartoutofstock">
+                      <div>This product is out of stock.</div>
+                    </div>
+                    <div data-node-type="commerce-add-to-cart-error" style="display:none" class="w-commerce-commerceaddtocarterror">
+                      <div data-node-type="commerce-add-to-cart-error" data-w-add-to-cart-quantity-error="Product is not available in this quantity." data-w-add-to-cart-general-error="Something went wrong when adding this item to the cart." data-w-add-to-cart-buy-now-error="Something went wrong when trying to purchase this item." data-w-add-to-cart-checkout-disabled-error="Checkout is disabled on this site.">Product is not available in this quantity.</div>
+                    </div>
+                  {% else %}
+
+                    <h1>lol</h1>
+                  {% endif %}
                 </div>
                 <div class="course-details">
                   <div class="course-detail-wrapper"><img src="/static/images/icon-level-01-academy-template.svg" alt="" class="course-detail-icon standard-size"><img src="/static/images/icon-level-02-academy-template.svg" alt="" class="course-detail-icon standard-size"><img src="/static/images/icon-level-03-academy-template.svg" alt="" class="course-detail-icon standard-size">
@@ -169,13 +174,13 @@
                 <div class="course-tabs-content w-tab-content">
                   <div data-w-tab="Tab 1" class="w-tab-pane w--tab-active">
                     <h2 class="title about-course">About the Course</h2>
-                    <div class="rich-text w-richtext"></div>
+                    <div class="rich-text w-richtext">{{ data["long_description"] }}</div>
                   </div>
                   <div data-w-tab="Tab 2" class="w-tab-pane">
                     <h2 class="title course-content">Course Content</h2>
                     <div class="course-content-columns">
                       <div class="course-content-column-2">
-                        <div class="rich-text-bullets w-richtext"></div>
+                        <div class="rich-text-bullets w-richtext">{{ data["content"]|safe }}</div>
                       </div>
                       <div class="spacer course-content"></div>
                       <div class="course-content-column-2">
@@ -226,7 +231,11 @@
                 </div>
               </div>
               <div>
-                <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." value="Add to Cart" class="w-commerce-commerceaddtocartbutton button-primary large full-width"><a href="checkout.html" data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" class="w-commerce-commercebuynowbutton button-secondary full-width add-to-cart">Buy now</a></form>
+                {% if data['price'] != "$0.00" %}
+                <form data-node-type="commerce-add-to-cart-form" class="w-commerce-commerceaddtocartform"><input type="submit" data-node-type="commerce-add-to-cart-button" data-loading-text="Adding to cart..." value="{{ data['price'] }}" class="w-commerce-commerceaddtocartbutton button-primary large full-width"><a href="checkout.html" data-node-type="commerce-buy-now-button" data-default-text="Buy now" data-subscription-text="Subscribe now" class="w-commerce-commercebuynowbutton button-secondary full-width add-to-cart">Buy now</a></form>
+                {% else %}
+                  <button type="button" onclick='location.assign(`{{ data["link"] }}`)'>Register NOW!</button>
+                {% endif %}
                 <div style="display:none" class="w-commerce-commerceaddtocartoutofstock">
                   <div>This product is out of stock.</div>
                 </div>
@@ -281,7 +290,7 @@
     <div class="container-default-1209px w-container">
       <div data-w-id="9bd4c19c-51d0-fbd8-40a7-a7b25e97372c" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="divider"></div>
     </div>
-    <div data-w-id="7f9ee631-ebdc-f61e-3211-8ea9882c02f6" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="section related-courses">
+    <!-- <div data-w-id="7f9ee631-ebdc-f61e-3211-8ea9882c02f6" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="section related-courses">
       <div class="container-default-1209px w-container">
         <div data-w-id="7f9ee631-ebdc-f61e-3211-8ea9882c02f8" style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="top-content related-courses">
           <div class="split-content courses-section-left">
@@ -316,7 +325,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="container-default-1209px w-container">
       <div data-w-id="d0a06249-e723-1509-686c-a89910190192" style="-webkit-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 48PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="divider"></div>
     </div>
