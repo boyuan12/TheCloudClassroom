@@ -94,7 +94,9 @@
                                     {% for d in info %}
 									<div class="card">
 										<div class="w-row">
-											<div class="w-col w-col-4"><img loading="lazy" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" src="{{ d['picture'] }}" alt="" sizes="284px" class="image all-courses"/></div>
+											<div class="w-col w-col-4">
+                                                <img loading="lazy" data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D" src="{{ d['imgclear'] }}" alt="" sizes="284px" class="image all-courses"/>
+                                            </div>
 											<div class="w-col w-col-8">
 												<div class="card-content">
 													<h3>{{ d['name'] }}</h3>

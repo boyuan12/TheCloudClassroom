@@ -72,5 +72,5 @@ def courses_all():
         else:
             row_as_dict["active"] = False
         info.append(row_as_dict)
-    # print(info)
+    print(info)
     return render_template("courses-all.html", info=info)
