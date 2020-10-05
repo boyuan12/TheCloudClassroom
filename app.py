@@ -74,3 +74,11 @@ def courses_all():
         info.append(row_as_dict)
     print(info)
     return render_template("courses-all.html", info=info)
+
+
+@app.route("/<string:html>")
+def other_file(html):
+    try:
+        return render_template(html)
+    except:
+        return render_template("404.html")
