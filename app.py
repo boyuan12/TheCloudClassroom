@@ -11,6 +11,7 @@ db = scoped_session(sessionmaker(bind=engine))
 s = db()
 ##
 @app.route("/")
+@app.route("/index.html")
 def index():
     result = s.execute("SELECT * FROM events")
     listT = []
@@ -21,6 +22,7 @@ def index():
     return render_template("index.html", results=listT)
 
 @app.route("/courses")
+@app.route("/course.html")
 def courses():
     result = s.execute("SELECT * FROM events LIMIT 4")
     listT = []
