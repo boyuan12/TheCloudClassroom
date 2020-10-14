@@ -33,7 +33,7 @@ def index():
 @app.route("/courses")
 @app.route("/course.html")
 def courses():
-    result = s.execute("SELECT * FROM events LIMIT 4")
+    result = s.execute("SELECT * FROM events LIMIT 4 WHERE status=1")
     listT = []
     for row in result:
         row_as_dict = dict(row)
