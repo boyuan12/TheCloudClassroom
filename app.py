@@ -8,7 +8,17 @@ app = Flask(__name__)
 engine = create_engine("postgres://huvphgbrnoupis:7f122ceda4954d16d4bb928b2e026d4ba2bc8f01fe24bc28dacd89c69e563e89@ec2-54-160-120-28.compute-1.amazonaws.com:5432/da15nie4o0pfki")
 db = scoped_session(sessionmaker(bind=engine))
 s = db()
-######
+
+import sentry_sdk
+# from flask import Flask
+from sentry_sdk.integrations.flask import FlaskIntegration
+
+sentry_sdk.init(
+    dsn="https://dad50acd268449f99482f3bbf4bb96dd@o393097.ingest.sentry.io/5462790",
+    integrations=[FlaskIntegration()],
+    traces_sample_rate=1.0
+)
+
 @app.route("/")
 @app.route("/index.html")
 def index():
