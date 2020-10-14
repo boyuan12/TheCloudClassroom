@@ -5,7 +5,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-engine = create_engine("postgres://huvphgbrnoupis:7f122ceda4954d16d4bb928b2e026d4ba2bc8f01fe24bc28dacd89c69e563e89@ec2-54-160-120-28.compute-1.amazonaws.com:5432/da15nie4o0pfki")
+engine = create_engine("postgres://gbaddrwiegwvxu:bc0932e37cafe72985ad867afdc32e8b5b5b6aa01f5e750c418e91b47d6eb7e7@ec2-34-237-247-76.compute-1.amazonaws.com:5432/degnrhmmhp6q7a")
 db = scoped_session(sessionmaker(bind=engine))
 s = db()
 
