@@ -22,7 +22,7 @@ sentry_sdk.init(
 @app.route("/")
 @app.route("/index.html")
 def index():
-    result = s.execute("SELECT * FROM events")
+    result = s.execute("SELECT * FROM events WHERE status=1 LIMIT 4")
     listT = []
     for row in result:
         row_as_dict = dict(row)
@@ -33,7 +33,7 @@ def index():
 @app.route("/courses")
 @app.route("/course.html")
 def courses():
-    result = s.execute("SELECT * FROM events LIMIT 4 WHERE status=1")
+    result = s.execute("SELECT * FROM events")
     listT = []
     for row in result:
         row_as_dict = dict(row)
