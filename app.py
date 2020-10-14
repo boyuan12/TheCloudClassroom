@@ -5,6 +5,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from datetime import datetime
 
 app = Flask(__name__)
+os.environ["FLASK_DEBUG"] = 0
 
 engine = create_engine("postgres://huvphgbrnoupis:7f122ceda4954d16d4bb928b2e026d4ba2bc8f01fe24bc28dacd89c69e563e89@ec2-54-160-120-28.compute-1.amazonaws.com:5432/da15nie4o0pfki")
 db = scoped_session(sessionmaker(bind=engine))
